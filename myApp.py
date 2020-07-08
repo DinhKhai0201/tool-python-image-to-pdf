@@ -4,8 +4,8 @@ import img2pdf
 from PIL import Image 
 import os
 #pyinstaller --onefile --windowed --icon="images\myicon.ico" myApp.py 
-#folder = StringVar()
-result = ""
+
+imagelist = []
 
 name = "_kai.pdf"
 window = tkinter.Tk()
@@ -30,6 +30,7 @@ def getTextInput():
     if folder:
         with open(folder + name,"wb") as f:
             f.write(img2pdf.convert([i for i in imagelist]))
+        convetlist.append(folder)
         show_success()
 
 textExample=tkinter.Text(window, height=15)
@@ -37,5 +38,6 @@ textExample.pack()
 btnRead=tkinter.Button(window, height=1, width=10, text="Convert", 
                     command=getTextInput)
 btnRead.pack()
+
 
 window.mainloop()
