@@ -1,4 +1,4 @@
-# Hello_Medium
+# Image to pdf
 
 
 <p>
@@ -9,4 +9,10 @@ This app is a demo for a Medium article about : "Creating a Single Executable Fi
 <p align="center">
   <img src="https://raw.githubusercontent.com/Kai1997/tool-python-image-to-pdf/master/images/Capture.PNG">
 </p>
+
+#Install PyInstaller
+```pip install pyinstaller
+
+#Building the executable file
+```pyinstaller -–onefile -–windowed --icon="images\myicon.ico" myApp.py
 
