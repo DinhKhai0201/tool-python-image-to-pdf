@@ -18,7 +18,6 @@ window.resizable(0, 0)
 def show_success():
     messagebox.showinfo('Notify', 'Successfully made pdf file')
 
-
 def getTextInput():
     imagelist = []
     folder=textExample.get("1.0", tkinter.END+"-1c")
@@ -33,21 +32,10 @@ def getTextInput():
             f.write(img2pdf.convert([i for i in imagelist]))
         show_success()
 
-
-
 textExample=tkinter.Text(window, height=15)
 textExample.pack()
 btnRead=tkinter.Button(window, height=1, width=10, text="Convert", 
                     command=getTextInput)
-
 btnRead.pack()
-
-#space = tkinter.Label(window, height=2, ).pack()
-
-#button = tkinter.Button(text=" Hello ", command=show_hello)
-#button.pack()
-                                            # Sort the images by name.
-
- 
 
 window.mainloop()
