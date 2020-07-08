@@ -11,8 +11,8 @@ This app is a demo for a Medium article about : "Creating a Single Executable Fi
 </p>
 
 #Install PyInstaller
-```pip install pyinstaller
+```pip install pyinstaller```
 
 #Building the executable file
-```pyinstaller -–onefile -–windowed --icon="images\myicon.ico" myApp.py
+```pyinstaller -–onefile -–windowed --icon="images\myicon.ico" myApp.py```
 
