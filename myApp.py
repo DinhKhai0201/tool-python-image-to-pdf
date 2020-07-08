@@ -1,12 +1,11 @@
 import tkinter
 from tkinter import messagebox
 import img2pdf 
-from PIL import Image 
 import os
 #pyinstaller --onefile --windowed --icon="images\myicon.ico" myApp.py 
 
 imagelist = []
-
+ext = (".jpg",".png",".jpeg")
 name = "_kai.pdf"
 window = tkinter.Tk()
 window.title(" Image to Pdf")
@@ -22,7 +21,7 @@ def getTextInput():
     imagelist = []
     folder=textExample.get("1.0", tkinter.END+"-1c")
     for dirpath, dirnames, filenames in os.walk(folder):
-        for filename in [f for f in filenames if f.endswith(".jpg")]:
+        for filename in [f for f in filenames if f.endswith(ext)]:
             full_path = os.path.join(dirpath, filename)
             imagelist.append(full_path)
 
@@ -30,7 +29,6 @@ def getTextInput():
     if folder:
         with open(folder + name,"wb") as f:
             f.write(img2pdf.convert([i for i in imagelist]))
-        convetlist.append(folder)
         show_success()
 
 textExample=tkinter.Text(window, height=15)
